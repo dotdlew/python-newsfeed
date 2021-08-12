@@ -21,6 +21,12 @@ class User(Base):
         # encrypt password
         return bcrypt.hashpw(password.encode('utf-8'), salt)
 
+    def verify_password(self, password):
+        return bcrypt.checkpw(
+            password.encode('utf-8'),
+            self.password.encode('utf-8')
+        )
+
     @validates('email')
     def validate_email(self, key, email):
         # make sure email address contains @ character

@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 def format_date(date):
-    return date.strftime('%Y/%b/%d')
+    return date.strftime('%Y/%m/%d')
 
 
 def format_url(url):
